@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-      <title>hCaptcha React Demo</title>
-      <style type="text/css">
-        iframe {
-          width: 100%;
-          height: 650px;
-          overflow: hidden;
-          border: none;
-        }
-      </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Interactive examples for the hCaptcha React component library" />
+    <title>hCaptcha React Demo</title>
+    <style>
+      :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172b4d; background: #f6f8fa; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+      .page-shell { max-width: 1100px; margin: 0 auto; padding: 56px 24px 36px; }
+      .hero { padding: 24px 0 40px; }
+      .eyebrow, .card-kicker { margin: 0 0 10px; color: #6b778c; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+      h1, h2, p { margin-top: 0; }
+      h1 { max-width: 720px; margin-bottom: 16px; font-size: clamp(36px, 6vw, 64px); line-height: 1.03; letter-spacing: -.045em; }
+      h2 { margin-bottom: 0; font-size: 22px; letter-spacing: -.02em; }
+      .hero-copy { max-width: 620px; color: #5e6c84; font-size: 18px; line-height: 1.55; }
+      .docs-link { color: #0052cc; font-weight: 700; text-decoration: none; }
+      .docs-link:hover { text-decoration: underline; }
+      .example-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid #dfe1e6; padding-bottom: 16px; }
+      .example-nav a { border-radius: 999px; padding: 8px 14px; color: #42526e; background: #fff; font-size: 14px; font-weight: 700; text-decoration: none; }
+      .example-nav a:hover { color: #0052cc; background: #deebff; }
+      .example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .example-card { scroll-margin-top: 20px; border: 1px solid #dfe1e6; border-radius: 16px; padding: 24px; background: #fff; box-shadow: 0 8px 24px rgba(9, 30, 66, .08); }
+      .frame-card { margin-top: 20px; }
+      .card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+      .card-description { min-height: 48px; margin: 12px 0 20px; color: #6b778c; line-height: 1.5; }
+      .status-dot { display: block; width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: #36b37e; box-shadow: 0 0 0 4px #e3fcef; }
+      .demo-surface, .frame-wrap { min-height: 124px; border: 1px solid #ebecf0; border-radius: 10px; padding: 16px; background: #f7f8fa; overflow: auto; }
+      .loading { margin: 0; color: #6b778c; }
+      footer { padding: 28px 0 0; color: #6b778c; font-size: 13px; text-align: center; }
+      iframe { display: block; width: 100%; height: 650px; border: 0; }
+      @media (max-width: 700px) { .page-shell { padding: 32px 16px 24px; } .example-grid { grid-template-columns: 1fr; } .hero { padding-top: 8px; } }
+    </style>
   </head>
   <body>
     <div id="app"></div>
-    <iframe src="./frame.html" id="example-frame"></iframe>
+    <iframe src="./frame.html" id="example-frame" title="Isolated hCaptcha React example"></iframe>
   </body>
 </html>

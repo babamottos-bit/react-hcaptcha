@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import HCaptcha from "../index.js";
-import { HCaptchaContext } from "./Context.tsx";
+import { HCaptchaContext } from "./Context.js";
 
 export function HCaptchaProvider({
   sitekey = null,
@@ -36,7 +36,7 @@ export function HCaptchaProvider({
     onVerify && onVerify(token);
   };
 
-  const executeInstance = async (config = {}) => {
+  const executeInstance = async (config: { rqdata?: string } = {}) => {
     try {
       if (!ready) {
         throw new Error("hCaptcha not ready");

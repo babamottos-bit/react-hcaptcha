@@ -18,7 +18,8 @@ export default {
 
   output: {
     path: DIST_DIR,
-    filename: '[name].js'
+    filename: '[name].js',
+    clean: true,
   },
 
   resolve: {
@@ -54,7 +55,11 @@ export default {
   ],
 
   devServer: {
-    port: 9000,
+    host: '0.0.0.0',
+    allowedHosts: 'all',
+    port: Number(process.env.PORT) || 3000,
+    hot: true,
+    historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

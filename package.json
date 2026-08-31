@@ -42,9 +42,11 @@
   ],
   "scripts": {
     "setup": "pnpm install --prefer-offline && pnpm --filter=@hcaptcha-react/lib run compile:build",
-    "start": "concurrently 'pnpm --filter=@hcaptcha-react/lib run compile:watch' 'pnpm --filter=@hcaptcha-react/demo run start'",
+    "start": "concurrently --kill-others-on-fail --names lib,demo \"pnpm --filter=@hcaptcha-react/lib run compile:watch\" \"pnpm --filter=@hcaptcha-react/demo run start\"",
     "build": "pnpm --filter=@hcaptcha-react/lib run compile:build",
-    "test": "pnpm --filter=@hcaptcha-react/lib run test:unit"
+    "typecheck": "pnpm --filter=@hcaptcha-react/lib run test:types",
+    "test": "pnpm --filter=@hcaptcha-react/lib run test:unit",
+    "check": "pnpm run build && pnpm run typecheck && pnpm run test"
   },
   "devDependencies": {
     "@types/node": "^18.19.130",

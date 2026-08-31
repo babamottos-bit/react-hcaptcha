@@ -271,9 +271,14 @@ This will be rare, but could happen in the event you are testing offline, or hav
 
 #### Scripts
 
-* `pnpm run start` - will start the demo app with hot reload
-* `pnpm run test` - will test the library: unit tests
-* `pnpm --filter @hcaptcha-react/lib run combile:build` - will build the production version
+Run these commands from the repository root after installing dependencies with `pnpm install`:
+
+* `pnpm run start` - build the library in watch mode and start the demo at [http://localhost:3000](http://localhost:3000)
+* `pnpm run build` - create the production library bundle
+* `pnpm run typecheck` - run the TypeScript checks
+* `pnpm run test` - run the unit tests
+* `pnpm run check` - run the build, type checks, and tests together
+* `pnpm --filter @hcaptcha-react/demo run build` - create a production demo bundle
 
 
 #### Environment Variables for Development
@@ -290,13 +295,11 @@ To publish a new version, follow the next steps:
 
 #### Running locally for development
 
-Please see: [Local Development Notes](https://docs.hcaptcha.com/#localdev).
+The demo uses the public hCaptcha configuration by default. To use a local hostname for testing, follow the [Local Development Notes](https://docs.hcaptcha.com/#localdev). The standard development workflow does not require editing your hosts file:
 
-Summary:
-
-```
-sudo echo "127.0.0.1 fakelocal.com" >> /private/etc/hosts
-npm start -- --disable-host-check
+```sh
+pnpm install
+pnpm run start
 ```
 
-open [http://fakelocal.com:9000](http://fakelocal.com:9000) to start the example.
+Then open [http://localhost:3000](http://localhost:3000). If the port is already in use, update `demo/webpack.config.js` and restart the server. A valid hCaptcha sitekey is required for a completed verification challenge.
